@@ -4,12 +4,12 @@ todo-gated policy for [pi](https://github.com/earendil-works/pi) that lets a str
 
 ## why this exists
 
-a cheap model executes well once the hard part — reading the task, picking an approach, committing to a plan — is already done. prewalk keeps the expensive model in the seat exactly that long: it plans, writes the todo list, lands the first successful edit, and then hands the same session to the configured target model. no new session, no summary handoff, no lost context.
+a cheap model executes well once the hard part is already done: reading the task, picking an approach, and committing to a plan. prewalk keeps the expensive model in the seat exactly that long: it plans, writes the todo list, lands the first successful edit, and then hands the same session to the configured target model. no new session, no summary handoff, no lost context.
 
 the package contains two internal modules:
 
-- **prewalk policy** — owns the planning prompt, todo gate, first-mutation gate, continuation prompt, and verification checklist.
-- **trajectory router** — applies a safe, persistent model and thinking-level transition without creating a session, changing branches, rewriting messages, or changing tools.
+- **prewalk policy:** owns the planning prompt, todo gate, first-mutation gate, continuation prompt, and verification checklist.
+- **trajectory router:** applies a safe, persistent model and thinking-level transition without creating a session, changing branches, rewriting messages, or changing tools.
 
 prewalk calls the router through a direct typed interface. no separate router extension is required.
 
