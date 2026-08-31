@@ -1,0 +1,38 @@
+{
+  "name": "pi-prewalk",
+  "version": "0.1.0",
+  "description": "Todo-gated Pi policy with trajectory-preserving model transitions",
+  "author": "Christiano Higuto",
+  "type": "module",
+  "license": "MIT",
+  "keywords": ["pi-package", "pi-extension", "model-routing", "prewalk"],
+  "files": [
+    "extensions",
+    "src",
+    "README.md"
+  ],
+  "pi": {
+    "extensions": [
+      "./extensions/prewalk/index.ts"
+    ]
+  },
+  "scripts": {
+    "test": "node --import tsx --test \"test/**/*.test.ts\"",
+    "typecheck": "tsc --noEmit",
+    "package:check": "npm pack --dry-run --json",
+    "check": "npm run typecheck && npm test && npm run package:check"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "0.84.3",
+    "@earendil-works/pi-ai": "^0.84.3",
+    "@types/node": "^24.3.0",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "^0.84.3"
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  }
+}
