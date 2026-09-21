@@ -15,18 +15,18 @@ import {
   type TerminalPolicyEffect,
 } from "./policy.ts";
 import { CHECKLIST_PROMPT, CONTINUE_PROMPT, PLAN_PROMPT } from "./prompts.ts";
-import type {
-  ThinkingLevel,
-  TrajectoryRouter,
-  TransitionResult,
-  TransitionTarget,
+import {
+  THINKING_LEVELS,
+  type ThinkingLevel,
+  type TrajectoryRouter,
+  type TransitionResult,
+  type TransitionTarget,
 } from "./trajectory-router/index.ts";
 import { resolveTarget } from "./target.ts";
 
 const PLAN_MESSAGE_PREFIX = "pi-prewalk-plan:";
 const CONTINUE_MESSAGE_PREFIX = "pi-prewalk-continue:";
 const CHECKLIST_MESSAGE_TYPE = "pi-prewalk-checklist";
-const THINKING_LEVELS = ["off", "minimal", "low", "medium", "high", "xhigh", "max"] as const;
 
 interface ActiveRun {
   id: string;

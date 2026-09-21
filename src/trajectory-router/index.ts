@@ -167,6 +167,7 @@ export function createTrajectoryRouter(pi: ExtensionAPI): TrajectoryRouter {
   return { transitionTo };
 }
 
+export { THINKING_LEVELS } from "./types.ts";
 export type {
   ModelState,
   ThinkingLevel,

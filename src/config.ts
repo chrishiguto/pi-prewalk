@@ -1,6 +1,5 @@
-import type { ThinkingLevel, TransitionTarget } from "./trajectory-router/index.ts";
+import { THINKING_LEVELS, type ThinkingLevel, type TransitionTarget } from "./trajectory-router/index.ts";
 
-const THINKING_LEVELS = ["off", "minimal", "low", "medium", "high", "xhigh", "max"] as const;
 const THINKING_ERROR = `Thinking must be one of: ${THINKING_LEVELS.join(", ")}.`;
 
 export const PREWALK_FLAG_NAMES = {

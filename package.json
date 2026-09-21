@@ -4,7 +4,11 @@
   "description": "Todo-gated Pi policy with trajectory-preserving model transitions",
   "author": "Christiano Higuto",
   "type": "module",
-  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrishiguto/dotfiles.git",
+    "directory": "pi/packages/prewalk"
+  },
   "keywords": ["pi-package", "pi-extension", "model-routing", "prewalk"],
   "files": [
     "extensions",
@@ -18,21 +22,26 @@
   },
   "scripts": {
     "test": "node --import tsx --test \"test/**/*.test.ts\"",
+    "test:policy": "node --import tsx --test test/policy.test.ts test/prewalk-workflow.test.ts",
+    "test:transitions": "node --import tsx --test test/integration/prewalk-extension.test.ts test/prewalk-command.test.ts test/prewalk-context.test.ts test/target-resolution.test.ts",
+    "test:router": "node --import tsx --test test/trajectory-router.test.ts",
+    "test:compatibility": "node --import tsx --test test/pi-compatibility.test.ts",
+    "test:shape": "node --import tsx --test test/package-shape.test.ts",
     "typecheck": "tsc --noEmit",
-    "package:check": "npm pack --dry-run --json",
-    "check": "npm run typecheck && npm test && npm run package:check"
+    "package:check": "pnpm pack --dry-run --json",
+    "check": "pnpm run typecheck && pnpm test && pnpm run package:check"
   },
   "devDependencies": {
-    "@earendil-works/pi-coding-agent": "0.84.3",
-    "@earendil-works/pi-ai": "^0.84.3",
+    "@earendil-works/pi-coding-agent": "catalog:",
+    "@earendil-works/pi-ai": "catalog:",
     "@types/node": "^24.3.0",
     "tsx": "^4.20.5",
     "typescript": "^5.9.2"
   },
   "peerDependencies": {
-    "@earendil-works/pi-coding-agent": "^0.84.3"
+    "@earendil-works/pi-coding-agent": "^0.84.2"
   },
   "engines": {
-    "node": ">=22.19.0"
+    "node": ">=24"
   }
 }
