@@ -15,10 +15,13 @@ prewalk calls the router through a direct typed interface. no separate router ex
 
 ## install
 
-requires node 22.19+, pi `@earendil-works/pi-coding-agent` 0.84.2 through the 0.84 release line, and authenticated planner and target models in pi. development checks run against 0.84.2, the version supplied by this dotfiles repository's locked Nixpkgs input.
+requires node 24+, pi `@earendil-works/pi-coding-agent` 0.84.2 through the 0.84 release line, and authenticated planner and target models in pi. development checks run against 0.84.2.
 
-load this Pi package from the [dotfiles Pi workspace](https://github.com/chrishiguto/dotfiles/tree/main/pi):
-the managed Pi settings load `pi/packages/prewalk` directly from that checkout. edit the source and use `/reload` to pick up changes.
+```sh
+pi install git:github.com/chrishiguto/pi-prewalk
+```
+
+[dotfiles](https://github.com/chrishiguto/dotfiles) consumes this repository as an unpinned git package source and refreshes it with `pi update --extensions` on apply.
 
 ## use
 

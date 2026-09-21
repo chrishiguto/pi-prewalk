@@ -1,0 +1,6 @@
+# pnpm 11 refuses to install while any dependency's build script is
+# undecided; this records the decision so `--frozen-lockfile` passes in CI.
+allowBuilds:
+  "@google/genai": false
+  esbuild: true
+  protobufjs: false

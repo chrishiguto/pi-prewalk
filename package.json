@@ -4,10 +4,10 @@
   "description": "Todo-gated Pi policy with trajectory-preserving model transitions",
   "author": "Christiano Higuto",
   "type": "module",
+  "packageManager": "pnpm@11.22.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chrishiguto/dotfiles.git",
-    "directory": "pi/packages/prewalk"
+    "url": "git+https://github.com/chrishiguto/pi-prewalk.git"
   },
   "keywords": ["pi-package", "pi-extension", "model-routing", "prewalk"],
   "files": [
@@ -32,8 +32,8 @@
     "check": "pnpm run typecheck && pnpm test && pnpm run package:check"
   },
   "devDependencies": {
-    "@earendil-works/pi-coding-agent": "catalog:",
-    "@earendil-works/pi-ai": "catalog:",
+    "@earendil-works/pi-coding-agent": "0.84.2",
+    "@earendil-works/pi-ai": "0.84.2",
     "@types/node": "^24.3.0",
     "tsx": "^4.20.5",
     "typescript": "^5.9.2"

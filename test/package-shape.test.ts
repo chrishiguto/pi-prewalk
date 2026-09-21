@@ -15,8 +15,7 @@ test("exposes exactly the Prewalk extension", async () => {
   assert.deepEqual(manifest.files, ["extensions", "src", "README.md"]);
 });
 
-test("does not establish standalone lockfiles or scratch state", async () => {
-  for (const relativePath of ["package-lock.json", "pnpm-lock.yaml", ".scratch"]) {
-    await assert.rejects(access(resolve(packageRoot, relativePath)));
-  }
+test("commits the standalone pnpm lockfile and no npm one", async () => {
+  await access(resolve(packageRoot, "pnpm-lock.yaml"));
+  await assert.rejects(access(resolve(packageRoot, "package-lock.json")));
 });
